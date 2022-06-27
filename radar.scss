@@ -1,0 +1,23 @@
+// HW2:
+//  using sass + loop / html + js + loop
+//  make so the radar has 10 divisions
+$radar-color: rgb(82, 249, 107);
+
+@mixin circle() {
+  border: 3px solid $radar-color;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@for $i from 1 through 10 {
+  .radar .radar-container .circle#{$i} {
+    @include circle();
+    width: 25px * $i;
+    height: 25px * $i;
+  }
+}
